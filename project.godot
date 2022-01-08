@@ -1,0 +1,75 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "EdgeVertices",
+"language": "GDScript",
+"path": "res://EdgeVertices.gd"
+}, {
+"base": "Node",
+"class": "HexConstants",
+"language": "GDScript",
+"path": "res://HexConstants.gd"
+}, {
+"base": "Node",
+"class": "HexCoordinates",
+"language": "GDScript",
+"path": "res://HexCoordinates.gd"
+}, {
+"base": "Node",
+"class": "HexDirection",
+"language": "GDScript",
+"path": "res://HexDirection.gd"
+}, {
+"base": "Spatial",
+"class": "HexMap",
+"language": "GDScript",
+"path": "res://HexMap.gd"
+}, {
+"base": "Node",
+"class": "HexMapChunk",
+"language": "GDScript",
+"path": "res://HexMapChunk.gd"
+}, {
+"base": "Node",
+"class": "HexTile",
+"language": "GDScript",
+"path": "res://HexTile.gd"
+}, {
+"base": "Node",
+"class": "HexUtilities",
+"language": "GDScript",
+"path": "res://HexUtilities.gd"
+} ]
+_global_script_class_icons={
+"EdgeVertices": "",
+"HexConstants": "",
+"HexCoordinates": "",
+"HexDirection": "",
+"HexMap": "",
+"HexMapChunk": "",
+"HexTile": "",
+"HexUtilities": ""
+}
+
+[application]
+
+config/name="Hex"
+run/main_scene="res://Map.tscn"
+config/icon="res://icon.png"
+
+[node]
+
+name_casing=2
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

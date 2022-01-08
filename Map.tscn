@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://HexMap.gd" type="Script" id=1]
+[ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource path="res://Camera.gd" type="Script" id=3]
+[ext_resource path="res://tilt_node.gd" type="Script" id=4]
+[ext_resource path="res://move_node.gd" type="Script" id=5]
+[ext_resource path="res://assets/atlas.png" type="TextureArray" id=8]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+width = 1
+height = 1
+chunk_width = 3
+chunk_height = 3
+elevation_step = 0.2
+perturb_vertices = true
+terrain_texture = ExtResource( 8 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.264614, 0.964354, 0, -0.964354, -0.264614, 0, 10.15, 26.7273 )
+shadow_enabled = true
+shadow_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+directional_shadow_mode = 1
+
+[node name="move_node" type="Spatial" parent="."]
+script = ExtResource( 5 )
+
+[node name="tilt_node" type="Spatial" parent="move_node"]
+script = ExtResource( 4 )
+
+[node name="Camera" type="Camera" parent="move_node/tilt_node"]
+transform = Transform( 1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 25, 6, 25 )
+environment = ExtResource( 2 )
+current = true
+script = ExtResource( 3 )
